@@ -64,6 +64,12 @@ bool Consulta::operator == (const Consulta &consulta) {
 }
 
 // Getters
+Paciente *Consulta::getPaciente() const {
+    return paciente;
+}
+Medico *Consulta::getMedico() const {
+    return medico;
+}
 TipoConsulta Consulta::getTipoConsulta() {
     return this->tipoConsulta;
 }

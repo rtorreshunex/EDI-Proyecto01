@@ -88,7 +88,12 @@ int main() {
                 break;
 
             case 7:
-                hospital->printConsultas();
+                cout << "DNI del paciente: ";
+                cin >> search;
+                cin.ignore();
+                if(hospital->saveConsultasByDni(search))
+                    cout << "El archivo " + search + ".txt se ha guardado correctamente" << endl;
+                else cout << "Ha ocurrido un error al guardar el archivo" << endl;
                 break;
 
             case 0:

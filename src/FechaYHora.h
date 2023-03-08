@@ -84,6 +84,13 @@ public:
    // Desc: Muestra la fecha/hora en pantalla
    void   mostrar       () const;
 
+   // Getters
+    int getDia();
+    int getMes();
+    int getAnio();
+    int getHora();
+    int getMinutos();
+
 };
 
 #endif /* _FECHAYHORA_H_ */

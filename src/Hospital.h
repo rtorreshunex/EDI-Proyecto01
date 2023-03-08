@@ -41,7 +41,7 @@ public:
     void printConsultas();
     bool findPacienteByDni(Paciente *&p);
     bool findMedicoByLastname(Medico *&m);
-    void saveConsultasByDni(const string &dni);
+    bool saveConsultasByDni(const string &dni);
 
     // Getters
     string getName();

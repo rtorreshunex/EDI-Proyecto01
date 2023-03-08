@@ -137,8 +137,37 @@ bool Hospital::findPacienteByDni(Paciente *&p) {
 bool Hospital::findMedicoByLastname(Medico *&m) {
     return (this->medicos->findElementByDataType(m));
 }
-void saveConsultasByDni(const string &dni) {
-    
+bool Hospital::saveConsultasByDni(const string &dni) {
+    ofstream ofs;
+    string line;
+    bool saved = false;
+    Consulta *c;
+    Paciente *p = new Paciente;
+    p->setDni(dni);
+    if(this->pacientes->findElementByDataType(p)) {
+        ofs.open("../files/" + p->getDni() + ".txt", ios::trunc);
+        if (!ofs.fail()) {
+            int count = 0;
+            for(int i = 0; i < this->consultas->getNElements(); i++){
+                this->consultas->getElement(i, c);
+                if(c->getPaciente() == p) {
+                    count++;
+                    ofs << "CONSULTA " + to_string(count) + ":" << endl;
+                    ofs << "- MÉDICO: " << endl;
+                    ofs << "-- Nombre: " + c->getMedico()->getName() << endl;
+                    ofs << "-- Apellidos: " + c->getMedico()->getLastname() << endl;
+                    ofs << "-- Especialidad: " + c->getMedico()->getSpecialty() << endl;
+                    ofs << "- Fecha y Hora: " << c->getFechayhora().getDia() << "/" <<
+                            c->getFechayhora().getMes() << "/" << c->getFechayhora().getAnio() <<
+                            " " << c->getFechayhora().getHora() << ":" << c->getFechayhora().getMinutos() << endl;
+                }
+            }
+            ofs << endl;
+            saved = true;
+        }
+        ofs.close();
+    }
+    return saved;
 }
 
 // Getters

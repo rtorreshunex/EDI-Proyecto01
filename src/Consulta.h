@@ -37,6 +37,8 @@ public:
     bool operator == (const Consulta &consulta);
 
     // Getters
+    Paciente *getPaciente() const;
+    Medico *getMedico() const;
     TipoConsulta getTipoConsulta();
     bool isAlta();
     string getReport();

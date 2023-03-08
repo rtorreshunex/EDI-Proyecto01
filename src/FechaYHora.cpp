@@ -182,3 +182,20 @@ void FechaYHora::mostrar () const {
    cout << this->dia  << "/" << this->mes     << "/" << this->anio << " "
         << this->hora << ":" << this->minutos << endl;
 }
+
+// Getters
+int FechaYHora::getDia() {
+    return dia;
+}
+int FechaYHora::getMes() {
+    return mes;
+}
+int FechaYHora::getAnio() {
+    return anio;
+}
+int FechaYHora::getHora() {
+    return hora;
+}
+int FechaYHora::getMinutos() {
+    return minutos;
+}
