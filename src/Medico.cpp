@@ -28,6 +28,19 @@ void Medico::mostrar() {
     cout << "-- Especialidad: " + this->specialty << endl;
 }
 
+bool Medico::operator < (const Medico &medico) {
+    return (this->lastname < medico.lastname);
+}
+bool Medico::operator <= (const Medico &medico) {
+    return (this->lastname <= medico.lastname);
+}
+bool Medico::operator > (const Medico &medico) {
+    return (this->lastname > medico.lastname);
+}
+bool Medico::operator == (const Medico &medico) {
+    return (this->lastname == medico.lastname);
+}
+
 // Getters
 string Medico::getName() {
     return this->name;

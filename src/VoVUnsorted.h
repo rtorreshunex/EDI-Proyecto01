@@ -4,7 +4,8 @@
 
 #ifndef VOVUNSORTED_H
 #define VOVUNSORTED_H
-const int MAX = 100;
+
+#include "constants.h"
 
 template <class DataType>
 class VoVUnsorted {

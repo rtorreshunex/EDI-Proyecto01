@@ -2,8 +2,8 @@
  * fechayhora.cpp
  *
  *  Autor: Juan A. Rico (jarico@unex.es)
- *  Fecha: 14 Febrero 2023
- *  Version: 1.1
+ *  Fecha: 1 Marzo 2023
+ *  Version: 1.3
  */
 
 #include <iostream>
@@ -88,33 +88,74 @@ bool FechaYHora::operator < (const FechaYHora &fh) {
    bool menor = false;
    
    if (this->anio < fh.anio) {
+      
       menor = true;
-   } else if ((this->anio == fh.anio) && (this->mes < fh.mes)) {
+      
+   } else if ((this->anio == fh.anio) &&
+              (this->mes  <  fh.mes))   {
+      
       menor = true;
-   } else if ((this->mes == fh.mes) && (this->dia < fh.dia)) {
+      
+   } else if ((this->anio == fh.anio) &&
+              (this->mes  == fh.mes)  &&
+              (this->dia  <  fh.dia))   {
+      
       menor = true;
-   } else if ((this->dia == fh.dia) && (this->hora < fh.hora)) {
+      
+   } else if ((this->anio == fh.anio) &&
+              (this->mes  == fh.mes)  &&
+              (this->dia  == fh.dia)  &&
+              (this->hora <  fh.hora))  {
+      
       menor = true;
-   } else if ((this->hora == fh.hora) && (this->minutos < fh.minutos)) {
+      
+   } else if ((this->anio    == fh.anio) &&
+              (this->mes     == fh.mes)  &&
+              (this->dia     == fh.dia)  &&
+              (this->hora    == fh.hora) &&
+              (this->minutos < fh.minutos)) {
+      
       menor = true;
+      
    }
-   
+
    return menor;
 }
 
 bool FechaYHora::operator > (const FechaYHora &fh) {
+   
    bool mayor = false;
 
    if (this->anio > fh.anio) {
+      
       mayor = true;
-   } else if ((this->anio == fh.anio) && (this->mes > fh.mes)) {
+      
+   } else if ((this->anio == fh.anio) &&
+              (this->mes  >  fh.mes))   {
+      
       mayor = true;
-   } else if ((this->mes == fh.mes) && (this->dia > fh.dia)) {
+      
+   } else if ((this->anio == fh.anio) &&
+              (this->mes  == fh.mes)  &&
+              (this->dia  >  fh.dia))   {
+      
       mayor = true;
-   } else if ((this->dia == fh.dia) && (this->hora > fh.hora)) {
+      
+   } else if ((this->anio == fh.anio) &&
+              (this->mes  == fh.mes)  &&
+              (this->dia  == fh.dia)  &&
+              (this->hora >  fh.hora))  {
+      
       mayor = true;
-   } else if ((this->hora == fh.hora) && (this->minutos > fh.minutos)) {
+      
+   } else if ((this->anio    == fh.anio) &&
+              (this->mes     == fh.mes)  &&
+              (this->dia     == fh.dia)  &&
+              (this->hora    == fh.hora) &&
+              (this->minutos >  fh.minutos)) {
+      
       mayor = true;
+      
    }
 
    return mayor;

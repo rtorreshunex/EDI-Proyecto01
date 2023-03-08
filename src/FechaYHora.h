@@ -2,18 +2,20 @@
  * FechaYHora.h
  *
  *  Autor: Juan A. Rico (jarico@unex.es)
- *  Fecha: 14 febrero 2023
- *  Version: 1.2
+ *  Fecha: 1 Marzo 2023
+ *  Version: 1.3
  *  Cambios: (1.1) unsigned int -> int: de acuerdo a las recomendaciones de C++
  *                 mostrar() es un metodo const
  *           (1.2) sustitución de los métodos menor e igual por los operadores
  *                 sobrecargados < e ==. Añadido operador >. Revisadas algunas
  *                 descripciones. Cambiado el nombre de los ficheros para que
  *                 se corresponda con el de la clase.
+ *           (1.3) Corregidos errores en los operadores > y <.
+ *                 Por seguridad: eliminación de "__" en macros (recomendación estándar C++).
  */
 
-#ifndef __FECHAYHORA_H
-#define __FECHAYHORA_H
+#ifndef _FECHAYHORA_H_
+#define _FECHAYHORA_H_
 
 #include <iostream>
 #include <string>
@@ -84,4 +86,4 @@ public:
 
 };
 
-#endif /* __FECHAYHORA_H */
+#endif /* _FECHAYHORA_H_ */

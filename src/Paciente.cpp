@@ -38,7 +38,20 @@ void Paciente::mostrar(){
             break;
     }
     cout << "-- Género: " + gender << endl;
-    cout << "Edad: " + this->age << endl;
+    cout << "-- Edad: " + to_string(this->age) << endl;
+}
+
+bool Paciente::operator < (const Paciente &paciente) {
+    return (this->dni < paciente.dni);
+}
+bool Paciente::operator <= (const Paciente &paciente) {
+    return (this->dni <= paciente.dni);
+}
+bool Paciente::operator > (const Paciente &paciente) {
+    return (this->dni > paciente.dni);
+}
+bool Paciente::operator == (const Paciente &paciente) {
+    return (this->dni == paciente.dni);
 }
 
 // Getters

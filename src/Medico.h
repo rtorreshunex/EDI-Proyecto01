@@ -19,12 +19,20 @@ private:
     string specialty;
 public:
     // Constructors
+
+    // Pre   = { }
+    // Compl = O(1)
+    // Desc: Constructor por defecto.
     Medico();
     Medico(string name, string lastname, string specialty);
     Medico(const Medico &medico);
 
     // Methods
     void mostrar();
+    bool operator < (const Medico &medico);
+    bool operator <= (const Medico &medico);
+    bool operator > (const Medico &medico);
+    bool operator == (const Medico &medico);
 
     // Getters
     string getName();

@@ -12,7 +12,7 @@ void pruebaPaciente(){
         cout << "Error en el set/get de nombre" << endl;
 
     // Caso 2
-    Paciente p2("Juan", "Perez Perez", "12345678A", Masculino);
+    Paciente p2("Juan", "Perez Perez", "12345678A", Masculino, 67);
     p1.mostrar();
     p2.mostrar();
 }

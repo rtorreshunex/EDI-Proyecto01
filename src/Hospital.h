@@ -10,6 +10,10 @@
 #include <fstream>
 using namespace std;
 
+template class VoVSorted<Paciente>;
+template class VoVSorted<Medico>;
+template class VoVSorted<Consulta>;
+
 #ifndef HOSPITAL_H
 #define HOSPITAL_H
 
@@ -18,9 +22,9 @@ class Hospital {
 private:
     // Attributes
     string name;
-    VoVUnsorted <Paciente *> *pacientes;
-    VoVUnsorted <Medico *> *medicos;
-    VoVSorted <Consulta *> *consultas;
+    VoVSorted <Paciente> *pacientes;
+    VoVSorted <Medico> *medicos;
+    VoVSorted <Consulta> *consultas;
 
     // Methods
     void loadPacientes();
@@ -31,9 +35,13 @@ public:
     Hospital(const string &name);
 
     // Methods
+    void printEstadisticas();
     void printPacientes();
     void printMedicos();
     void printConsultas();
+    bool findPacienteByDni(Paciente *&p);
+    bool findMedicoByLastname(Medico *&m);
+    void saveConsultasByDni(const string &dni);
 
     // Getters
     string getName();

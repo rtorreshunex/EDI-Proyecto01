@@ -19,12 +19,12 @@ private:
     Medico *medico;
     TipoConsulta tipoConsulta;
     bool alta;
-    string informe;
+    string report;
     FechaYHora fechayhora;
 public:
     // Constructors
     Consulta();
-    Consulta(Paciente *paciente, Medico *medico, const TipoConsulta &tipoConsulta, const bool &alta, const string &informe, const FechaYHora &fechayhora);
+    Consulta(Paciente *paciente, Medico *medico, const TipoConsulta &tipoConsulta, const bool &alta, const string &report, const FechaYHora &fechayhora);
     Consulta(Paciente *paciente, Medico *medico, const TipoConsulta &tipoConsulta, const FechaYHora &fechayhora);
     Consulta(Paciente *paciente, Medico *medico);
     Consulta(Paciente *paciente);
@@ -32,17 +32,20 @@ public:
     // Methods
     void mostrar();
     bool operator < (const Consulta &consulta);
+    bool operator <= (const Consulta &consulta);
+    bool operator > (const Consulta &consulta);
+    bool operator == (const Consulta &consulta);
 
     // Getters
     TipoConsulta getTipoConsulta();
     bool isAlta();
-    string getInforme();
+    string getReport();
     FechaYHora getFechayhora();
 
     // Setters
     void setTipoConsulta(TipoConsulta tipoConsulta);
     void setAlta(bool alta);
-    void setInforme(string informe);
+    void setReport(string report);
     void setFechayhora(FechaYHora fechayhora);
 
     // Destructors

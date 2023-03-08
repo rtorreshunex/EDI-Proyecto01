@@ -10,61 +10,86 @@
 using namespace std;
 
 // Muestra el menu por pantalla y devuelve una opcion elegida.
-int menu(string nombre) {
+int menu(string name) {
 
-    int opcion;
+    int option;
 
     do {
         cout << endl;
-        cout << "--------  " << nombre << "  --------"  << endl << endl;
+        cout << "--------  " << name << "  --------"  << endl << endl;
 
         cout << "     1. Mostrar Estadísticas               " << endl;
         cout << "     2. Mostrar Pacientes                  " << endl;
         cout << "     3. Mostrar Médicos                    " << endl;
-        cout << "     4. ...                                " << endl;
+        cout << "     4. Mostrar Consultas                  " << endl;
+        cout << "     5. Buscar Paciente por su DNI         " << endl;
+        cout << "     6. Buscar Médico por su apellido      " << endl;
+        cout << "     7. Guardar Consultas de un Paciente   " << endl;
         cout <<                                                  endl;
         cout << "     0. Finalizar.                         " << endl;
         cout << "                        Opción:  ";
 
-        cin >> opcion;
+        cin >> option;
         cin.ignore();
 
-    } while ((opcion < 0) || (opcion > 3));
+    } while ((option < 0) || (option > 7));
 
-    return opcion;
+    return option;
 }
 
 int main() {
 
-    Hospital  *hospital  = nullptr;
-    bool       fin       = false;
-    int        opcion;
+    Hospital  *hospital  = new Hospital("Hospital UEX");
+    bool fin = false;
+    int option;
+    string search;
+    Paciente *p = new Paciente;
+    Medico *m = new Medico;
 
     // 1. Crear hospital (los datos se cargan automáticamente).
-    // hospital = ...
 
     // 2. Muestra el menú hasta que se pulse "fin"
     do {
-        opcion = menu(hospital->getName());
+        option = menu(hospital->getName());
 
-        switch (opcion) {
+        switch (option) {
             case 1:
-                hospital->mostrarEstadisticas();
+                hospital->printEstadisticas();
                 break;
 
             case 2:
-                hospital->mostrarPacientes();
+                hospital->printPacientes();
                 break;
 
             case 3:
-                hospital->mostrarMedicos();
+                hospital->printMedicos();
                 break;
 
             case 4:
-                . . .
+                hospital->printConsultas();
                 break;
 
-                // Resto de opciones (algoritmos)
+            case 5:
+                cout << "DNI del paciente: ";
+                cin >> search;
+                cin.ignore();
+                p->setDni(search);
+                if(hospital->findPacienteByDni(p))
+                    p->mostrar();
+                break;
+
+            case 6:
+                cout << "Apellido del médico: ";
+                cin >> search;
+                cin.ignore();
+                m->setLastname(search);
+                if(hospital->findMedicoByLastname(m))
+                    m->mostrar();
+                break;
+
+            case 7:
+                hospital->printConsultas();
+                break;
 
             case 0:
                 fin = true;
@@ -78,6 +103,8 @@ int main() {
     } while (!fin);
 
     // 3. Elimina hospital (los datos se almacenan automáticamente).
+    delete p;
+    delete m;
     delete hospital;
 
     return 0;

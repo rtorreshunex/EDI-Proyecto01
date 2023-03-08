@@ -11,7 +11,7 @@ Consulta::Consulta() {
     this->tipoConsulta = Pendiente;
     this->alta = false;
 }
-Consulta::Consulta(Paciente *paciente, Medico *medico, const TipoConsulta &tipoConsulta, const bool &alta, const string &informe, const FechaYHora &fechayhora) {}
+Consulta::Consulta(Paciente *paciente, Medico *medico, const TipoConsulta &tipoConsulta, const bool &alta, const string &report, const FechaYHora &fechayhora) {}
 Consulta::Consulta(Paciente *paciente, Medico *medico, const TipoConsulta &tipoConsulta, const FechaYHora &fechayhora) {
     this->paciente = paciente;
     this->medico = medico;
@@ -45,13 +45,22 @@ void Consulta::mostrar() {
     if(this->alta)
         cout << "Si" << endl;
     else cout << "No" << endl;
-    cout << "- Informe: " + this->informe << endl;
+    cout << "- Informe: " + this->report << endl;
     cout << "- Fecha: ";
     this->fechayhora.mostrar();
 }
 
 bool Consulta::operator < (const Consulta &consulta) {
     return (this->fechayhora < consulta.fechayhora);
+}
+bool Consulta::operator <= (const Consulta &consulta) {
+    return (this->fechayhora < consulta.fechayhora);
+}
+bool Consulta::operator > (const Consulta &consulta) {
+    return (this->fechayhora > consulta.fechayhora);
+}
+bool Consulta::operator == (const Consulta &consulta) {
+    return (this->fechayhora == consulta.fechayhora);
 }
 
 // Getters
@@ -61,8 +70,8 @@ TipoConsulta Consulta::getTipoConsulta() {
 bool Consulta::isAlta() {
     return this->alta;
 }
-string Consulta::getInforme() {
-    return this->informe;
+string Consulta::getReport() {
+    return this->report;
 }
 FechaYHora Consulta::getFechayhora() {
     return this->fechayhora;
@@ -75,8 +84,8 @@ void Consulta::setTipoConsulta(TipoConsulta tipoConsulta) {
 void Consulta::setAlta(bool alta) {
     this->alta = alta;
 }
-void Consulta::setInforme(string informe) {
-    this->informe += " " + informe;
+void Consulta::setReport(string informe) {
+    this->report += " " + informe;
 }
 void Consulta::setFechayhora(FechaYHora fechayhora) {
     this->fechayhora = fechayhora;
