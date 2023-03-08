@@ -1,11 +1,7 @@
 #include <iostream>
-#include "pruebasPaciente.h"
 #include "Paciente.h"
 #include "Medico.h"
-#include "FechaYHora.h"
-#include "Consulta.h"
 #include "Hospital.h"
-#include "VoVSorted.h"
 
 using namespace std;
 

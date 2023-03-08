@@ -11,7 +11,6 @@ Consulta::Consulta() {
     this->tipoConsulta = Pendiente;
     this->alta = false;
 }
-Consulta::Consulta(Paciente *paciente, Medico *medico, const TipoConsulta &tipoConsulta, const bool &alta, const string &report, const FechaYHora &fechayhora) {}
 Consulta::Consulta(Paciente *paciente, Medico *medico, const TipoConsulta &tipoConsulta, const FechaYHora &fechayhora) {
     this->paciente = paciente;
     this->medico = medico;
@@ -19,8 +18,6 @@ Consulta::Consulta(Paciente *paciente, Medico *medico, const TipoConsulta &tipoC
     this->alta = false;
     this->fechayhora = fechayhora;
 }
-Consulta::Consulta(Paciente *paciente, Medico *medico) {}
-Consulta::Consulta(Paciente *paciente) {}
 
 // Methods
 void Consulta::mostrar() {
@@ -51,9 +48,6 @@ void Consulta::mostrar() {
 }
 
 bool Consulta::operator < (const Consulta &consulta) {
-    return (this->fechayhora < consulta.fechayhora);
-}
-bool Consulta::operator <= (const Consulta &consulta) {
     return (this->fechayhora < consulta.fechayhora);
 }
 bool Consulta::operator > (const Consulta &consulta) {

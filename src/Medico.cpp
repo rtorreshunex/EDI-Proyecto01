@@ -31,9 +31,6 @@ void Medico::mostrar() {
 bool Medico::operator < (const Medico &medico) {
     return (this->lastname < medico.lastname);
 }
-bool Medico::operator <= (const Medico &medico) {
-    return (this->lastname <= medico.lastname);
-}
 bool Medico::operator > (const Medico &medico) {
     return (this->lastname > medico.lastname);
 }

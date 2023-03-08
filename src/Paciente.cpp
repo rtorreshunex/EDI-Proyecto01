@@ -44,9 +44,6 @@ void Paciente::mostrar(){
 bool Paciente::operator < (const Paciente &paciente) {
     return (this->dni < paciente.dni);
 }
-bool Paciente::operator <= (const Paciente &paciente) {
-    return (this->dni <= paciente.dni);
-}
 bool Paciente::operator > (const Paciente &paciente) {
     return (this->dni > paciente.dni);
 }
