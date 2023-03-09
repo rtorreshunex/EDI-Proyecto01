@@ -2,6 +2,7 @@
 #include "Paciente.h"
 #include "Medico.h"
 #include "Hospital.h"
+#include "../tests/tests.h"
 
 using namespace std;
 
@@ -33,8 +34,7 @@ int menu(string name) {
     return option;
 }
 
-int main() {
-
+void app() {
     Hospital  *hospital  = new Hospital("Hospital UEX");
     bool fin = false;
     int option;
@@ -107,6 +107,11 @@ int main() {
     delete p;
     delete m;
     delete hospital;
+}
 
+int main() {
+
+    tests();
+    //app();
     return 0;
 }

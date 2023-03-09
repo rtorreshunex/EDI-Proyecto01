@@ -81,7 +81,7 @@ public:
        * Compl = O(1)
        * Desc: Método que devuelve un puntero al objeto de tipo Paciente que corresponde a la consulta actual.
     */
-    Paciente *getPaciente() const;
+    Paciente *getPaciente();
 
     /**
        * Pre       = {}
@@ -89,7 +89,7 @@ public:
        * Compl = O(1)
        * Desc:    Este método devuelve un puntero al objeto Medico asociado con esta Consulta.
     */
-    Medico *getMedico() const;
+    Medico *getMedico();
 
     /**
        * Pre       = {}
@@ -125,6 +125,22 @@ public:
 
     // Setters
     /**
+       * Pre       = {paciente debe estar inicializado con un valor}
+       * Post     = {El valor del atributo paciente apunta al valor pasado como parámetro}
+       * Compl = O(1)
+       * Desc:    Este método actualiza el valor del atributo paciente de esta Consulta con el valor pasado como parámetro.
+    */
+    void setPaciente(Paciente *paciente);
+
+    /**
+       * Pre       = {medico debe estar inicializado con un valor}
+       * Post     = {El valor del atributo medico apunta al valor pasado como parámetro}
+       * Compl = O(1)
+       * Desc:    Este método actualiza el valor del atributo medico de esta Consulta con el valor pasado como parámetro.
+    */
+    void setMedico(Medico *medico);
+
+    /**
        * Pre       = {tipoConsulta debe estar inicializado con un valor}
        * Post     = {El valor del atributo tipoConsulta se actualiza con el valor pasado como parámetro}
        * Compl = O(1)
@@ -136,7 +152,7 @@ public:
        * Pre       = {alta debe estar inicializado con un valor}
        * Post     = {El valor del atributo alta se actualiza con el valor pasado como parámetro}
        * Compl = O(1)
-       * Desc:    Este método actualiza el valor del atributo alta de este Medico con el valor pasado como parámetro.
+       * Desc:    Este método actualiza el valor del atributo alta de esta Consulta con el valor pasado como parámetro.
     */
     void setAlta(bool alta);
 
@@ -144,7 +160,7 @@ public:
        * Pre       = {report debe estar inicializado con un valor}
        * Post     = {El valor del atributo report se actualiza con el valor pasado como parámetro}
        * Compl = O(1)
-       * Desc:    Este método actualiza el valor del atributo report de este Medico con el valor pasado como parámetro.
+       * Desc:    Este método actualiza el valor del atributo report de esta Consulta con el valor pasado como parámetro.
     */
     void setReport(string report);
 
@@ -152,7 +168,7 @@ public:
        * Pre       = {fechayhora debe estar inicializado con un valor}
        * Post     = {El valor del atributo fechayhora se actualiza con el valor pasado como parámetro}
        * Compl = O(1)
-       * Desc:    Este método actualiza el valor del atributo fechayhora de este Medico con el valor pasado como parámetro.
+       * Desc:    Este método actualiza el valor del atributo fechayhora de esta Consulta con el valor pasado como parámetro.
     */
     void setFechayhora(FechaYHora fechayhora);
 

@@ -10,12 +10,15 @@ Consulta::Consulta() {
     this->medico = NULL;
     this->tipoConsulta = Pendiente;
     this->alta = false;
+    this->report = "";
+    this->fechayhora = FechaYHora();
 }
 Consulta::Consulta(Paciente *paciente, Medico *medico, const TipoConsulta &tipoConsulta, const FechaYHora &fechayhora) {
     this->paciente = paciente;
     this->medico = medico;
     this->tipoConsulta = tipoConsulta;
     this->alta = false;
+    this->report = "";
     this->fechayhora = fechayhora;
 }
 
@@ -58,11 +61,11 @@ bool Consulta::operator == (const Consulta &consulta) {
 }
 
 // Getters
-Paciente *Consulta::getPaciente() const {
-    return paciente;
+Paciente *Consulta::getPaciente() {
+    return this->paciente;
 }
-Medico *Consulta::getMedico() const {
-    return medico;
+Medico *Consulta::getMedico() {
+    return this->medico;
 }
 TipoConsulta Consulta::getTipoConsulta() {
     return this->tipoConsulta;
@@ -78,14 +81,21 @@ FechaYHora Consulta::getFechayhora() {
 }
 
 // Setters
+void Consulta::setPaciente(Paciente *paciente) {
+    this->paciente = paciente;
+}
+
+void Consulta::setMedico(Medico *medico) {
+    this->medico = medico;
+}
 void Consulta::setTipoConsulta(TipoConsulta tipoConsulta) {
     this->tipoConsulta = tipoConsulta;
 }
 void Consulta::setAlta(bool alta) {
     this->alta = alta;
 }
-void Consulta::setReport(string informe) {
-    this->report += " " + informe;
+void Consulta::setReport(string report) {
+    this->report += " " + report;
 }
 void Consulta::setFechayhora(FechaYHora fechayhora) {
     this->fechayhora = fechayhora;

@@ -1,9 +1,15 @@
-#include "iostream"
-#include "pruebasPaciente.h"
+#include "testsPaciente.h"
 
-using namespace std;
+void testsMostrarPaciente() {
 
-void pruebaPaciente(){
+}
+
+void testsOperatorsPaciente() {
+
+}
+
+void testsPaciente(){
+    cout << "--- INICIO Pruebas Paciente ---" << endl;
     // Caso 1
     Paciente p1;
     p1.setName("Maria");
@@ -15,4 +21,5 @@ void pruebaPaciente(){
     Paciente p2("Juan", "Perez Perez", "12345678A", Masculino, 67);
     p1.mostrar();
     p2.mostrar();
+    cout << "--- FIN Pruebas Paciente ---" << endl;
 }
