@@ -65,6 +65,7 @@ void testsSettersMedico();
  */
 void testsSettersConsulta();
 
+// Invoca todas las pruebas anteriores
 bool initialTests();
 
 #endif //INITIALTESTS_H

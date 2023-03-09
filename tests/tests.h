@@ -7,6 +7,7 @@
 #include "testsConsulta.h"
 #include "testsVoVSorted.h"
 
+// Invoca todas las pruebas
 void tests();
 
 
