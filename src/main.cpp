@@ -42,9 +42,6 @@ void app() {
     Paciente *p = new Paciente;
     Medico *m = new Medico;
 
-    // 1. Crear hospital (los datos se cargan automáticamente).
-
-    // 2. Muestra el menú hasta que se pulse "fin"
     do {
         option = menu(hospital->getName());
 
@@ -103,7 +100,6 @@ void app() {
 
     } while (!fin);
 
-    // 3. Elimina hospital (los datos se almacenan automáticamente).
     delete p;
     delete m;
     delete hospital;
@@ -111,7 +107,7 @@ void app() {
 
 int main() {
 
-    tests();
-    //app();
+    //tests();
+    app();
     return 0;
 }
